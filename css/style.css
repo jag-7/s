@@ -327,7 +327,7 @@ header {
     display: flex;
     align-items: center;
     position: relative;
-    background: var(--gradient-hero), url('../Imagens/3.jpeg');
+    background: var(--gradient-hero), url('../Imagens/10.jpeg');
     background-size: cover;
     background-position: center;
     overflow: hidden;
