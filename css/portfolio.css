@@ -1,0 +1,322 @@
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.btn {
+    padding: 15px 30px;
+    border-radius: 0;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+}
+
+.hero {
+    background: var(--gradient-hero);
+    color: var(--white);
+    text-align: center;
+    padding: 90px 0;
+    position: relative;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px var(--shadow-strong);
+}
+
+.hero p {
+    font-size: 20px;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.portfolio-download-section {
+    background: linear-gradient(135deg, rgba(0, 63, 125, 0.05) 0%, rgba(0, 35, 71, 0.1) 100%);
+    padding: 50px 0;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.download-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-download-large {
+    background: var(--gradient-primary);
+    color: var(--white);
+    border: none;
+    font-size: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 40px;
+    border-radius: 0;
+    box-shadow: 0 8px 25px rgba(0, 63, 125, 0.2);
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.4s ease;
+}
+
+.btn-download-large:hover {
+    background: var(--gradient-blue);
+    box-shadow: 0 15px 35px rgba(0, 63, 125, 0.4);
+    transform: translateY(-5px);
+}
+
+.btn-download-large i {
+    font-size: 24px;
+}
+
+/* ========================================= */
+/* Seção Portfólio - Accordion & Modernized Content */
+/* ========================================= */
+.portfolio-section {
+    padding: 60px 20px;
+    background-color: #f8f9fa;
+}
+
+.portfolio-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.portfolio-accordion-item {
+    background: #ffffff;
+    border-radius: 0;
+    border: 1px solid #e9ecef;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.portfolio-accordion-item:hover {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transform: translateY(-3px);
+}
+
+.portfolio-item { /* Accordion Header */
+    cursor: pointer;
+    padding: 25px 35px;
+    transition: background-color 0.3s ease;
+    position: relative;
+}
+
+.portfolio-title h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-dark, #333);
+    padding-right: 40px; /* Space for the icon */
+}
+
+/* Accordion Icon */
+.portfolio-item::after {
+    content: '+';
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--primary-color, #ff4500);
+    position: absolute;
+    right: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.portfolio-accordion-item.active .portfolio-item::after {
+    transform: translateY(-50%) rotate(45deg);
+}
+
+/* Accordion Content */
+.portfolio-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+}
+
+.portfolio-accordion-item.active .portfolio-content {
+    max-height: 3000px; /* Large enough for content */
+    transition: max-height 1s ease-in-out;
+}
+
+/* Modernized Project Body */
+.project-body {
+    padding: 30px 35px 40px;
+    border-top: 1px solid #e9ecef;
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 50px;
+    align-items: start;
+}
+
+/* Gallery Styles */
+.project-gallery {
+    position: relative;
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.gallery-images {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 0;
+    position: relative; /* For absolute positioning of images */
+}
+
+.gallery-images .gallery-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    z-index: 1;
+}
+
+.gallery-images .gallery-image.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.gallery-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-gallery:hover .gallery-controls {
+    opacity: 1;
+}
+
+.gallery-controls button {
+    pointer-events: all;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 45px;
+    height: 45px;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-controls .gallery-prev { margin-left: 15px; }
+.gallery-controls .gallery-next { margin-right: 15px; }
+
+.gallery-controls button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Modernized Project Info */
+.project-info h4 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--secondary-color, #003f7d);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e9ecef;
+}
+.project-info h4:first-child {
+    margin-top: 0;
+}
+
+.project-info p {
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: var(--text-dark, #333);
+    font-size: 1.1rem;
+}
+
+/* Modernized Lists */
+.project-info ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 25px 0;
+}
+
+.project-info ul li {
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    line-height: 1.7;
+    font-size: 1rem; /* Explicitly setting li font size */
+}
+
+.project-info ul li::before {
+    content: "✓";
+    color: var(--primary-color, #ff4500);
+    font-size: 1.2em;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 2px;
+}
+
+/* Special styling for "Tempo de Execução" */
+.project-info p:has(> i.fa-clock) {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-left: 4px solid var(--primary-color, #ff4500);
+    padding: 15px 20px;
+    border-radius: 0;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .project-body {
+        grid-template-columns: 1fr;
+    }
+    .project-gallery {
+        max-width: 500px;
+        margin: 0 auto 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio-item { padding: 20px; }
+    .portfolio-title h3 { font-size: 1.1rem; padding-right: 30px; }
+    .portfolio-item::after { right: 20px; font-size: 2rem; }
+    .project-body { padding: 30px 20px 30px 20px; gap: 30px; }
+    .project-info h4 { font-size: 1.4rem; }
+    .project-info p { font-size: 1.05rem; }
+    .project-info ul li { font-size: 0.95rem; } /* Adjust li font size on mobile */
+}

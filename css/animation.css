@@ -1,0 +1,84 @@
+/* --- LOADER STYLES --- */
+#loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+}
+
+.loader-half {
+    width: 100%;
+    height: 50vh;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    /* Efeito de transição com 1s */
+    transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+#loader-top {
+    align-items: flex-end;
+}
+
+#loader-bottom {
+    align-items: flex-start;
+}
+
+.loader-gear {
+    width: 100px;
+    height: 100px;
+    background-image: url('../engrenagem.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation: spin 1s linear infinite;
+}
+
+#loader-top .loader-gear {
+    transform: translateY(50%);
+}
+
+#loader-bottom .loader-gear {
+    transform: translateY(-50%);
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* --- ANIMAÇÃO DE SAÍDA --- */
+body.loaded #loader-top {
+    transform: translateY(-100%);
+}
+
+body.loaded #loader-bottom {
+    transform: translateY(100%);
+}
+
+/* --- ESTILOS DO CONTEÚDO PRINCIPAL --- */
+#main-content {
+    opacity: 0;
+    /* O conteúdo aparece durante a transição */
+    transition: opacity 0.8s ease-in 0.2s;
+}
+
+body.loaded #main-content {
+    opacity: 1;
+}
+
+/* --- CONTROLO DA BARRA DE ROLAGEM --- */
+body {
+    overflow: hidden; /* Esconde a barra de rolagem durante o load */
+}
+
+body.loaded {
+    overflow: auto; /* Mostra a barra de rolagem após o load */
+}

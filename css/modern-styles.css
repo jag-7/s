@@ -1,0 +1,1017 @@
+/* Estilos Modernos para Indus Electric - 2025 */
+
+/* 1. Variáveis de Cores e Temas */
+:root {
+    /* Cores Principais */
+    --primary: #003F7D;
+    --primary-dark: #002347;
+    --primary-light: #0066CC;
+    --secondary: #FF5003;
+    --secondary-light: #FF7B3D;
+    --secondary-dark: #CC4000;
+    
+    /* Cores de Fundo */
+    --bg-light: #FFFFFF;
+    --bg-dark: #0A192F;
+    --bg-card: rgba(255, 255, 255, 0.9);
+    --bg-card-dark: rgba(16, 24, 47, 0.9);
+    
+    /* Cores de Texto */
+    --text-primary: #1A1A1A;
+    --text-secondary: #4A4A4A;
+    --text-light: #F5F5F5;
+    
+    /* Efeitos */
+    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    
+    /* Bordas */
+    --border-radius-sm: 0;
+    --border-radius-md: 0;
+    --border-radius-lg: 0;
+    
+    /* Transições */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+/* 2. Reset e Estilos Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--bg-light);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden;
+    padding-top: 90px; /* Espaço para o header fixo */
+}
+
+/* 3. Tipografia Moderna */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: var(--gradient-primary);
+    border-radius: 0;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+/* 4. Botões Modernos */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.875rem 2rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    text-decoration: none;
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    color: white;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+
+.btn-outline:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+/* 5. Cabeçalho Moderno */
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+    padding: 10px 0;
+}
+
+#header.scrolled {
+    padding: 5px 0;
+    box-shadow: var(--shadow-md);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.logo1 {
+    height: 50px;
+    width: auto;
+    transition: all var(--transition-normal);
+}
+
+/* 6. Navegação Moderna - Melhorada */
+.nav-menu {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.nav-link {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    padding: 0.5rem 0.5rem;
+    transition: all var(--transition-fast);
+    border-radius: 0;
+    outline: none;
+}
+
+.nav-link:hover,
+.nav-link:focus,
+.nav-link.active {
+    color: var(--primary);
+}
+
+/* Efeito de sublinhado animado */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0.5rem;
+    width: calc(100% - 1rem);
+    height: 2px;
+    background: var(--secondary);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform var(--transition-normal), background var(--transition-normal);
+}
+
+.nav-link:hover::after,
+.nav-link:focus::after,
+.nav-link.active::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Botão de Contato no Menu */
+.nav-link.btn {
+    background: var(--gradient-primary);
+    color: white !important;
+    padding: 0.6rem 1.5rem !important;
+    border-radius: 0;
+    margin-left: 0.5rem;
+    transition: all var(--transition-normal), transform 0.2s ease;
+    border: none;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0, 63, 125, 0.2);
+}
+
+.nav-link.btn:hover,
+.nav-link.btn:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 63, 125, 0.3);
+    color: white !important;
+}
+
+.nav-link.btn::after {
+    display: none;
+}
+
+/* Melhorias de acessibilidade para foco */
+.nav-link:focus-visible {
+    outline: 3px solid var(--primary-light);
+    outline-offset: 3px;
+    background-color: rgba(0, 63, 125, 0.1);
+}
+
+/* 7. Hero Section Moderna */
+.hero {
+    position: relative;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(0, 35, 71, 0.95) 0%, rgba(0, 63, 125, 0.9) 100%), 
+              url('../Imagens/hero-bg.jpg') no-repeat center center/cover;
+    color: white;
+    padding: 8rem 0;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 30%, rgba(255, 80, 3, 0.2) 0%, transparent 50%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+.hero h1 {
+    color: white;
+    margin-bottom: 1.5rem;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1.1;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2.5rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* 8. Efeitos de Hover e Animações */
+.hover-scale {
+    transition: transform var(--transition-normal);
+}
+
+.hover-scale:hover {
+    transform: translateY(-5px);
+}
+
+/* 9. Menu Mobile - Melhorado */
+/* Botão do Menu Mobile */
+.nav-toggle {
+    display: none; /* Escondido por padrão, visível apenas em mobile */
+    background: none;
+    border: 2px solid transparent;
+    border-radius: 0;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+    position: relative;
+    width: 44px;
+    height: 44px;
+    margin-left: 15px;
+    transition: all 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Melhorias de acessibilidade para foco */
+.nav-toggle:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(0, 63, 125, 0.3);
+}
+
+/* Efeito de clique */
+.nav-toggle:active {
+    transform: scale(0.95);
+}
+
+/* Suporte para modo escuro */
+.dark-theme .nav-toggle {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-theme .nav-toggle:focus {
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 3px rgba(0, 150, 255, 0.3);
+}
+
+/* Acessibilidade: texto escondido visualmente, mas acessível para leitores de tela */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Estilo do ícone do menu hambúrguer */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none; /* Evita que o clique no ícone não seja registrado */
+}
+
+.hamburger-line {
+    display: block;
+    width: 100%;
+    height: 2.5px;
+    background: var(--primary);
+    border-radius: 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+    will-change: transform, opacity;
+    /* Suaviza a renderização em dispositivos móveis */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    /* Melhora a renderização em dispositivos móveis */
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+/* Melhorias para o modo escuro */
+.dark-theme .hamburger-line {
+    background: var(--text-light);
+}
+
+/* Efeito de hover no botão do menu */
+.nav-toggle:hover .hamburger-line,
+.nav-toggle:focus .hamburger-line {
+    background: var(--secondary);
+}
+
+/* Melhorias para dispositivos com touch */
+@media (hover: none) and (pointer: coarse) {
+    .nav-toggle:active .hamburger-line {
+        background: var(--secondary);
+        transform: scale(0.9);
+    }
+}
+
+/* Melhorias de acessibilidade para foco visível */
+.nav-toggle:focus-visible {
+    outline: 3px solid var(--primary-light);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba(0, 63, 125, 0.3);
+}
+
+/* Suporte para navegadores que não suportam :focus-visible */
+.nav-toggle:focus:not(:focus-visible) {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Efeito de animação do botão do menu */
+.nav-toggle[aria-expanded="true"] .hamburger-line:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .hamburger-line:nth-child(2) {
+    opacity: 0;
+    transform: scale(0);
+}
+
+.nav-toggle[aria-expanded="true"] .hamburger-line:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Overlay do Menu */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: opacity, visibility;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Estilos para telas menores que 1024px */
+@media (max-width: 1024px) {
+    .header-container {
+        padding: 0 1.5rem;
+    }
+    
+    /* Mostrar botão do menu em telas menores */
+    .nav-toggle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    /* Menu Lateral */
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -320px;
+        width: 300px;
+        max-width: 85%;
+        height: 100vh;
+        max-height: 100%;
+        background: var(--bg-light);
+        flex-direction: column;
+        padding: 90px 15px 30px;
+        box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 999;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+        /* Melhorias para iOS */
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        /* Evita bug visual no iOS ao rolar */
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+    
+    /* Barra de rolagem personalizada para navegadores WebKit */
+    .nav-menu::-webkit-scrollbar {
+        width: 6px;
+    }
+    
+    .nav-menu::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.05);
+        border-radius: 0;
+    }
+    
+    .nav-menu::-webkit-scrollbar-thumb {
+        background: var(--primary);
+        border-radius: 0;
+    }
+    
+    .nav-menu::-webkit-scrollbar-thumb:hover {
+        background: var(--primary-dark);
+    }
+    
+    .nav-menu.active {
+        transform: translateX(-320px);
+    }
+    
+    .nav-menu li {
+        width: 100%;
+        margin: 0;
+        opacity: 0;
+        transform: translateX(20px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    
+    .nav-menu.active li {
+        opacity: 1;
+        transform: translateX(0);
+        transition-delay: calc(0.1s * var(--i, 0));
+    }
+    
+    .nav-link {
+        display: flex;
+        align-items: center;
+        padding: 14px 20px;
+        font-size: 1.1rem;
+        color: var(--text-primary);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        width: 100%;
+        border-radius: 0;
+        margin: 4px 0;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        -webkit-tap-highlight-color: transparent;
+    }
+    
+    /* Efeito de ripple para toque */
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+    }
+    
+    .nav-link:active::after {
+        opacity: 1;
+    }
+    
+    .nav-link i {
+        width: 24px;
+        margin-right: 12px;
+        text-align: center;
+        font-size: 1.1em;
+        color: var(--primary);
+        transition: all 0.3s ease;
+        flex-shrink: 0;
+    }
+    
+    .nav-link:hover i,
+    .nav-link:focus i {
+        transform: scale(1.1);
+    }
+    
+    .nav-link.btn i {
+        color: white;
+    }
+    
+    /* Melhorias para foco visível */
+    .nav-link:focus-visible {
+        outline: 3px solid var(--primary-light);
+        outline-offset: -3px;
+        box-shadow: 0 0 0 4px rgba(0, 63, 125, 0.3);
+    }
+    
+    /* Suporte para navegadores que não suportam :focus-visible */
+    .nav-link:focus:not(:focus-visible) {
+        outline: none;
+        box-shadow: none;
+    }
+    
+    /* Melhorias para dispositivos com touch */
+    @media (hover: none) and (pointer: coarse) {
+        .nav-link:active {
+            background: rgba(0, 0, 0, 0.05);
+            transform: scale(0.98);
+        }
+        
+        .nav-link.btn:active {
+            transform: scale(0.98) !important;
+        }
+    }
+    
+    .nav-link:hover,
+    .nav-link:focus {
+        color: var(--primary);
+        background: rgba(0, 63, 125, 0.05);
+        padding-left: 20px;
+    }
+    
+    .nav-link::after {
+        display: none;
+    }
+    
+    .nav-link.btn {
+        margin: 20px 0 0;
+        text-align: center;
+        width: 100%;
+        padding: 12px !important;
+        border-radius: 0;
+        justify-content: center;
+    }
+    
+    /* Suporte para modo escuro no menu móvel */
+    .dark-theme .nav-menu {
+        background: var(--bg-dark);
+        box-shadow: -5px 0 25px rgba(0, 0, 0, 0.3);
+    }
+    
+    .dark-theme .nav-link {
+        color: var(--text-light);
+        border-bottom-color: rgba(255, 255, 255, 0.05);
+    }
+    
+    .dark-theme .nav-link:hover,
+    .dark-theme .nav-link:focus {
+        background: rgba(255, 255, 255, 0.05);
+    }
+    
+    .dark-theme .nav-link::after {
+        background: rgba(255, 255, 255, 0.1);
+    }
+    
+    .dark-theme .hamburger-line {
+        background: var(--text-light);
+    }
+    
+    /* Melhorias para navegadores que suportam prefers-color-scheme */
+    @media (prefers-color-scheme: dark) {
+        .js-nav-initialized .nav-menu:not(.active) {
+            background: var(--bg-dark);
+        }
+    }
+    
+    /* Melhorias para dispositivos móveis pequenos */
+    @media (max-height: 600px) {
+        .nav-menu {
+            padding-top: 70px;
+        }
+        
+        .nav-link {
+            padding: 10px 15px;
+        }
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* 10. Modo Escuro */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: var(--bg-dark);
+        color: var(--text-light);
+    }
+    
+    #header {
+        background: rgba(16, 24, 47, 0.98);
+    }
+    
+    .nav-menu a {
+        color: var(--text-light);
+    }
+    
+    .btn-outline {
+        color: var(--text-light);
+        border-color: var(--text-light);
+    }
+    
+    .btn-outline:hover {
+        color: var(--primary);
+        background: var(--text-light);
+    }
+}
+
+/* 11. Animações de Entrada */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.reveal {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.reveal-left {
+    animation: fadeInLeft 0.8s ease forwards;
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 12. Efeito de Vidro (Glassmorfismo) */
+.glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* 13. Componentes de Interface */
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.section {
+    padding: 6rem 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-header p {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* 14. Cards de Serviços */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.service-card {
+    background: var(--bg-card);
+    border-radius: 0;
+    padding: 2.5rem 2rem;
+    transition: all var(--transition-normal);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    color: var(--secondary);
+    margin-bottom: 1.5rem;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+/* 15. Botão de Voltar ao Topo - Melhorado */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 56px;
+    height: 56px;
+    background: var(--primary);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0;
+    display: none; /* Inicialmente escondido, será mostrado via JS */
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all var(--transition-normal), background-color 0.2s ease;
+    z-index: 9999; /* Garante que fique acima de outros elementos */
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Efeito de hover e foco para acessibilidade */
+.back-to-top:hover,
+.back-to-top:focus {
+    background: var(--primary-dark);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    outline: none;
+}
+
+/* Estado visível */
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    display: flex; /* Mostra o botão quando visível */
+}
+
+/* Efeito de clique */
+.back-to-top:active {
+    transform: translateY(1px) scale(0.98);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Melhorias para dispositivos móveis */
+@media (max-width: 768px) {
+    .back-to-top {
+        width: 48px;
+        height: 48px;
+        bottom: 1.5rem;
+        right: 1.5rem;
+        font-size: 1.25rem;
+    }
+    
+    .back-to-top.visible {
+        /* Garante que o botão seja visível mesmo com o teclado ativo em dispositivos móveis */
+        position: fixed;
+    }
+}
+
+/* Suporte para modo escuro */
+.dark-theme .back-to-top {
+    background: var(--primary-light);
+    color: var(--white);
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme .back-to-top:hover,
+.dark-theme .back-to-top:focus {
+    background: var(--primary);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* 16. Efeito de Preloader */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+#preloader.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid var(--primary);
+    border-radius: 0;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 17. Animações de Texto */
+.text-gradient {
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+
+/* 18. Efeito de Esqueleto para Carregamento */
+.skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 0;
+}
+
+@keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* 19. Tooltips Personalizados */
+[data-tooltip] {
+    position: relative;
+    cursor: help;
+}
+
+[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px);
+    background: var(--primary);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0;
+    font-size: 0.875rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-normal);
+    z-index: 1000;
+    pointer-events: none;
+}
+
+[data-tooltip]:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-5px);
+}
+
+/* 20. Personalização da Barra de Rolagem */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-dark);
+}

@@ -1,0 +1,563 @@
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Reutilização de estilos para pseudo-elementos de background/efeito */
+.with-pattern-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../Imagens/pattern-bg.png');
+    opacity: 0.05; /* Padrão, pode ser sobrescrito */
+    z-index: 0;
+}
+
+/* ========================================= */
+/* Seção Hero */
+/* ========================================= */
+.hero {
+    height: 100%; /* Ajuste se precisar de altura fixa ou min-height */
+    background: var(--gradient-hero);
+    padding: 120px 0 60px;
+    text-align: center;
+    color: var(--white);
+    /* Adiciona aqui a classe with-pattern-bg se o hero também tiver o padrão */
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+    font-size: 20px;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ========================================= */
+/* Serviços Detalhados */
+/* ========================================= */
+.services-detailed {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.services-detailed::before { /* Aplica o padrão de fundo */
+    opacity: 0.05;
+    @extend .with-pattern-bg; /* Conceito de "mixin" ou agrupamento */
+}
+
+.service-block {
+    display: grid;
+    grid-template-columns: 1fr 1.7fr;
+    gap: 80px;
+    margin-bottom: 120px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.service-block:last-child {
+    margin-bottom: 0;
+}
+
+.service-block.reverse {
+    direction: rtl; /* Inverte a ordem dos elementos */
+}
+
+.service-block.reverse .service-content {
+    direction: ltr; /* Corrige a direção do texto dentro do conteúdo */
+}
+
+/* --- Imagem do Serviço a esquerda--- */
+.service-image {
+    position: relative;
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow: 0 30px 60px var(--shadow-medium);
+    transform: perspective(1000px) rotateY(-5deg);
+    transition: all 0.5s ease;
+    aspect-ratio: 16/9;
+    width: 100%;
+    max-width: 800px;
+    height: 60%; /* Pode ser problemático com aspect-ratio. Reavaliar */
+    margin: 0 auto;
+}
+
+.service-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(0, 63, 125, 0.2), rgba(255, 80, 3, 0.2));
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.service-image:hover {
+    transform: perspective(1000px) rotateY(0deg);
+}
+
+.service-image:hover::before {
+    opacity: 1;
+}
+
+.service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.service-image:hover img {
+    transform: scale(1.1);
+}
+
+/* --- Imagem do Serviço a direita--- */
+.service-image1 {
+    position: relative;
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow: 0 30px 60px var(--shadow-medium);
+    transform: perspective(1000px) rotateY(5deg);
+    transition: all 0.5s ease;
+    aspect-ratio: 16/9;
+    width: 100%;
+    max-width: 800px;
+    height: 60%; /* Pode ser problemático com aspect-ratio. Reavaliar */
+    margin: 0 auto;
+}
+
+.service-image1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(0, 63, 125, 0.2), rgba(255, 80, 3, 0.2));
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.service-image1:hover {
+    transform: perspective(1000px) rotateY(0deg);
+}
+
+.service-image1:hover::before {
+    opacity: 1;
+}
+
+.service-image1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.service-image1:hover img {
+    transform: scale(1.1);
+}
+
+
+/* --- Conteúdo do Serviço --- */
+.service-content {
+    padding: 40px;
+    background: var(--white);
+    border-radius: 0;
+    box-shadow: 0 20px 40px var(--shadow-light);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-content::before { /* Linha decorativa à esquerda */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: var(--gradient-secondary);
+}
+
+.service-content h2 {
+    font-size: 42px;
+    color: var(--primary);
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 20px;
+    line-height: 1.2;
+}
+
+.service-content h2::after { /* Linha decorativa sob o título */
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    height: 4px;
+    background: var(--gradient-secondary);
+    border-radius: 0;
+    margin-left: 25%;
+}
+
+.service-content h2 .highlight {
+    color: var(--secondary);
+}
+
+.service-description {
+    font-size: 18px;
+    color: var(--gray);
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+/* --- Features do Serviço --- */
+.service-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.feature {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 0;
+    box-shadow: 0 15px 30px var(--shadow-light);
+    transition: all 0.4s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.feature::before { /* Efeito de hover de background */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-primary);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 0;
+}
+
+.feature:hover {
+    transform: translateY(-10px);
+    border-color: transparent;
+}
+
+.feature:hover::before {
+    opacity: 0.05;
+}
+
+.feature i {
+    font-size: 36px;
+    color: var(--secondary);
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.4s ease;
+}
+
+.feature:hover i {
+    transform: scale(1.1);
+}
+
+.feature h3 {
+    font-size: 22px;
+    color: var(--primary);
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.feature ul {
+    list-style: none;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.feature ul li {
+    color: var(--gray);
+    margin-bottom: 12px;
+    padding-left: 25px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.feature ul li::before {
+    content: '→';
+    color: var(--secondary);
+    position: absolute;
+    left: 0;
+    transition: transform 0.3s ease;
+}
+
+.feature:hover ul li::before {
+    transform: translateX(5px);
+}
+
+/* --- Benefícios do Serviço --- */
+.service-benefits {
+    background: var(--gradient-primary);
+    padding: 40px;
+    border-radius: 0;
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-benefits::before { /* Aplica o padrão de fundo */
+    opacity: 0.1;
+    @extend .with-pattern-bg; /* Conceito de "mixin" ou agrupamento */
+}
+
+.service-benefits h3 {
+    font-size: 28px;
+    margin-bottom: 25px;
+    color: var(--white);
+    position: relative;
+}
+
+.service-benefits ul {
+    list-style: none;
+    padding: 0;
+    position: relative;
+}
+
+.service-benefits ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 16px;
+    transition: transform 0.3s ease;
+}
+
+.service-benefits ul li:hover {
+    transform: translateX(10px);
+}
+
+.service-benefits ul li i {
+    color: var(--secondary);
+    margin-right: 15px;
+    font-size: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0;
+    transition: all 0.3s ease;
+}
+
+.service-benefits ul li:hover i {
+    background: var(--secondary);
+    color: var(--white);
+    transform: rotate(360deg);
+}
+
+/* ========================================= */
+/* Seção CTA (Call to Action) */
+/* ========================================= */
+.services-cta {
+    padding: 100px 0;
+    background: var(--gradient-hero);
+    text-align: center;
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+    height: 50%; /* Ajuste se precisar de altura fixa ou min-height */
+}
+
+.services-cta::before { /* Aplica o padrão de fundo */
+    opacity: 0.1;
+    @extend .with-pattern-bg; /* Conceito de "mixin" ou agrupamento */
+}
+
+.cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-content h2 {
+    font-size: 42px;
+    margin-bottom: 25px;
+    color: var(--white);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.cta-content p {
+    font-size: 20px;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+.cta-content .btn {
+    padding: 18px 40px;
+    font-size: 18px;
+    background: var(--gradient-secondary);
+    border: none;
+    border-radius: 0;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 20px var(--shadow-cta);
+}
+
+.cta-content .btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px var(--shadow-cta-hover);
+}
+
+/* ========================================= */
+/* Responsividade */
+/* ========================================= */
+@media (max-width: 1200px) {
+    .service-content h2 {
+        font-size: 36px;
+    }
+
+    .service-features {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .service-block {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .service-block.reverse {
+        direction: ltr; /* Reseta para evitar problemas de layout em telas menores */
+    }
+
+    .service-image .service-image1 {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .service-features {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-detailed {
+        padding: 60px 0;
+    }
+
+    .service-block {
+        margin-bottom: 80px;
+        display: flex; /* Altera para flexbox para controle mais fácil */
+        flex-direction: column;
+    }
+
+    .service-block.reverse {
+        flex-direction: column; /* Garante que a ordem não seja invertida */
+    }
+
+    .service-image .service-image1 {
+        max-width: 400px;
+        margin-bottom: 30px;
+    }
+
+    .service-content {
+        padding: 30px;
+    }
+
+    .service-content h2 {
+        font-size: 28px;
+    }
+
+    .service-description {
+        font-size: 16px;
+    }
+
+    .feature {
+        padding: 25px;
+    }
+
+    .feature h3 {
+        font-size: 20px;
+    }
+
+    .service-benefits {
+        padding: 30px;
+    }
+
+    .service-benefits h3 {
+        font-size: 24px;
+    }
+
+    .cta-content h2 {
+        font-size: 32px;
+    }
+
+    .cta-content p {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .h1{
+        font-size: 30px;
+    }
+    .h2{
+        font-size: 26.5px;
+    }
+    .h3{
+        font-size: 23.5px;
+    }
+    .service-image .service-image1 {
+        max-width: 300px;
+    }
+
+    .service-content h2 {
+        font-size: 24px;
+    }
+
+    .feature {
+        padding: 20px;
+    }
+
+    .service-benefits {
+        padding: 25px;
+    }
+
+    .cta-content h2 {
+        font-size: 28px;
+    }
+}
