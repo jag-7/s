@@ -84,7 +84,7 @@ h1, h2, h3, h4, h5, h6 {
 .btn-primary {
     background: var(--gradient-secondary);
     color: var(--white);
-    border: none;
+    border: 50px;
     font-size: 18px;
 }
 
@@ -1312,12 +1312,17 @@ footer::before {
     color: var(--secondary-color);
 }
 
-/* Page Hero */
+/* Page Hero - sobre nós */
 .page-hero {
-    background: var(--gradient-hero);
-    padding: 120px 0 60px;
-    text-align: center;
+   background: var(--gradient-hero), url('../Imagens/5.jpeg');
     color: var(--white);
+    text-align: center;
+    padding: 90px 0;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+      height: 50vh;
 }
 
 .page-hero h1 {
@@ -1332,6 +1337,33 @@ footer::before {
     max-width: 600px;
     margin: 0 auto;
 }
+
+/* Page Hero - contactoss */
+.page-hero1 {
+   background: var(--gradient-hero), url('../Imagens/2.jpeg');
+    color: var(--white);
+    text-align: center;
+    padding: 90px 0;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+      height: 50vh;
+}
+
+.page-hero1 h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.page-hero1 p {
+    font-size: 20px;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
 
 /* About History Section */
 .about-history {

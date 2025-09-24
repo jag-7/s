@@ -1,3 +1,8 @@
+   
+   :root{
+    --gradient-hero1: linear-gradient(90deg, rgba(0, 35, 71, 0.95) 0%, rgba(0, 63, 125, 0.9) 100%);
+   }
+
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Orbitron', sans-serif;
@@ -31,12 +36,15 @@ h1, h2, h3, h4, h5, h6 {
 /* Seção Hero */
 /* ========================================= */
 .hero {
-    height: 100%; /* Ajuste se precisar de altura fixa ou min-height */
-    background: var(--gradient-hero);
-    padding: 120px 0 60px;
-    text-align: center;
+    background: var(--gradient-hero), url('../Imagens/3.jpeg');
     color: var(--white);
-    /* Adiciona aqui a classe with-pattern-bg se o hero também tiver o padrão */
+    text-align: center;
+    padding: 90px 0;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+      height: 50vh;
 }
 
 .hero h1 {
@@ -390,12 +398,13 @@ h1, h2, h3, h4, h5, h6 {
 /* ========================================= */
 .services-cta {
     padding: 100px 0;
-    background: var(--gradient-hero);
+    background: var(--gradient-hero1);
     text-align: center;
     color: var(--white);
     position: relative;
     overflow: hidden;
     height: 50%; /* Ajuste se precisar de altura fixa ou min-height */
+    
 }
 
 .services-cta::before { /* Aplica o padrão de fundo */
