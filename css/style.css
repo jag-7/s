@@ -19,7 +19,7 @@
     --gradient-secondary: linear-gradient(135deg, var(--secondary-dark) 0%, var(--secondary) 100%);
     --gradient-blue: linear-gradient(135deg, #002347 0%, #003F7D 50%, #003366 100%);
     --gradient-orange: linear-gradient(135deg, #FF8E00 0%, #FD7702 50%, #FF5003 100%);
-    --gradient-hero: linear-gradient(90deg, rgba(0, 35, 71, 0.95) 0%, rgba(0, 63, 125, 0.9) 100%);
+    --gradient-hero: linear-gradient(90deg, rgba(0, 35, 71, 0.5) 0%, rgba(0, 63, 125, 0.5) 100%);
 
     /* Cores adicionais para Portfolio/Courses */
     --light-bg: #f8f9fa;
@@ -327,6 +327,7 @@ header {
     display: flex;
     align-items: center;
     position: relative;
+    background: var(--gradient-hero), url('../Imagens/3.jpeg');
     background-size: cover;
     background-position: center;
     overflow: hidden;
@@ -338,18 +339,6 @@ header {
     height: 100%;
 }
 
-.hero-left {
-    width: 50%;
-    position: relative;
-}
-
-.hero-right {
-    width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--gradient-hero);
-}
 
 .hero-content {
     position: relative;
