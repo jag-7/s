@@ -68,7 +68,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
-    border-radius: 0;
+    border-radius: 50px;
     text-decoration: none;
     position: relative;
     overflow: hidden;
@@ -573,7 +573,7 @@ header {
     width: 80px;
     height: 80px;
     background: var(--gradient-primary);
-    border-radius: 0;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -620,7 +620,7 @@ header {
     width: 80px;
     height: 80px;
     background: var(--gradient-secondary);
-    border-radius: 0;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -710,7 +710,7 @@ header {
     width: 80px;
     height: 80px;
     background: var(--gradient-primary);
-    border-radius: 0;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -797,7 +797,7 @@ header {
     width: 80px;
     height: 80px;
     background: var(--gradient-secondary);
-    border-radius: 0;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -837,7 +837,7 @@ header {
     padding: 8px 15px;
     background: rgba(255, 80, 3, 0.1);
     color: var(--secondary);
-    border-radius: 0;
+    border-radius: 20px;
     font-size: 14px;
     font-weight: 500;
 }
@@ -2314,7 +2314,7 @@ font-size: 26.5px;
     width: 60px;
     height: 60px;
     background: var(--gradient-primary);
-    border-radius: 0;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
