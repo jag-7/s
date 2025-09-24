@@ -1,0 +1,42 @@
+{
+  "name": "indus-electric-website",
+  "version": "1.0.0",
+  "description": "Website da Indus Electric - Especialistas em Soluções Industriais, Elétricas e Mecânicas",
+  "main": "index.html",
+  "scripts": {
+    "build": "npm run minify-css && npm run minify-js && npm run optimize-images",
+    "minify-css": "cleancss -o css/style.min.css css/style.css && cleancss -o css/portfolio.min.css css/portfolio.css && cleancss -o css/servicos.min.css css/servicos.css",
+    "minify-js": "uglifyjs js/global.js js/portfolio.js js/contact-form.js -o js/bundle.min.js",
+    "optimize-images": "imagemin Imagens/**/*.{jpg,jpeg,png} --out-dir=Imagens/optimized",
+    "dev": "live-server --port=3000",
+    "lint": "eslint js/*.js",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "keywords": [
+    "manutenção industrial",
+    "motores marítimos",
+    "automação industrial",
+    "eletricidade industrial",
+    "luanda",
+    "angola"
+  ],
+  "author": "Indus Electric",
+  "license": "MIT",
+  "devDependencies": {
+    "clean-css-cli": "^5.6.0",
+    "uglify-js": "^3.17.4",
+    "imagemin-cli": "^7.0.0",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-pngquant": "^9.0.2",
+    "live-server": "^1.2.2",
+    "eslint": "^8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/induselectric/website.git"
+  },
+  "bugs": {
+    "url": "https://github.com/induselectric/website/issues"
+  },
+  "homepage": "https://induselectric.ao"
+} 

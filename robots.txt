@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://induselectric.ao/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Disallow admin areas (if any)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /cache/
+
+# Allow important files
+Allow: /css/
+Allow: /js/
+Allow: /Imagens/
+Allow: /*.html
+Allow: /*.css
+Allow: /*.js 

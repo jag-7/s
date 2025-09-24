@@ -1,0 +1,68 @@
+{
+  "name": "Indus Electric - Especialistas em Soluções Industriais",
+  "short_name": "Indus Electric",
+  "description": "Especialistas em eletricidade industrial, manutenção de motores, automação e recondicionamento de equipamentos eletromecânicos em Luanda, Angola.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#003F7D",
+  "theme_color": "#FF5003",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "pt",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "Imagens/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "Imagens/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "productivity", "utilities"],
+  "screenshots": [
+    {
+      "src": "Imagens/screenshot-desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "Imagens/screenshot-mobile.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Serviços",
+      "short_name": "Serviços",
+      "description": "Ver nossos serviços",
+      "url": "/serviços.html",
+      "icons": [
+        {
+          "src": "Imagens/icon-services.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Contato",
+      "short_name": "Contato",
+      "description": "Entre em contacto",
+      "url": "/contactos.html",
+      "icons": [
+        {
+          "src": "Imagens/icon-contact.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ]
+} 
