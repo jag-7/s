@@ -180,18 +180,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Gallery Styles */
-.project-gallery {
+.project-gallery, .project-gallery-mobile {
     position: relative;
     border-radius: 0;
     overflow: hidden;
     box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
 
+.project-gallery-mobile {
+    display: none;
+}
+
 .gallery-images {
-    aspect-ratio: 1 / 1;
+    position: relative;
+    padding-bottom: 100%; /* 1:1 Aspect Ratio */
+    height: 0;
     overflow: hidden;
     border-radius: 0;
-    position: relative; /* For absolute positioning of images */
 }
 
 .gallery-images .gallery-image {
@@ -223,7 +228,7 @@ h1, h2, h3, h4, h5, h6 {
     transition: opacity 0.3s ease;
 }
 
-.project-gallery:hover .gallery-controls {
+.project-gallery:hover .gallery-controls, .project-gallery-mobile:hover .gallery-controls {
     opacity: 1;
 }
 
@@ -269,6 +274,8 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 20px;
     color: var(--text-dark, #333);
     font-size: 1.1rem;
+    word-wrap: break-word; /* Fix overflow issue */
+    text-align: justify;
 }
 
 /* Modernized Lists */
@@ -284,6 +291,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 12px;
     line-height: 1.7;
     font-size: 1rem; /* Explicitly setting li font size */
+    word-wrap: break-word; /* Fix overflow issue */
 }
 
 .project-info ul li::before {
@@ -315,7 +323,7 @@ h1, h2, h3, h4, h5, h6 {
         grid-template-columns: 1fr;
     }
     .project-gallery {
-        max-width: 500px;
+        max-width: 100%; /* Use full width on smaller screens */
         margin: 0 auto 40px;
     }
 }
@@ -328,6 +336,19 @@ h1, h2, h3, h4, h5, h6 {
     .project-info h4 { font-size: 1.4rem; }
     .project-info p { font-size: 1.05rem; }
     .project-info ul li { font-size: 0.95rem; } /* Adjust li font size on mobile */
+
+    .project-gallery {
+        display: none; /* Hide original gallery on mobile */
+    }
+
+    .project-gallery-mobile {
+        display: none; /* Hide mobile gallery by default */
+        margin-bottom: 20px;
+    }
+
+    .portfolio-accordion-item.active .project-gallery-mobile {
+        display: block; /* Show mobile gallery when active */
+    }
 }
 
 /* ========================================= */
@@ -343,6 +364,8 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 500;
     margin: 0;
     font-size: 1.05rem !important;
+    word-wrap: break-word; /* Fix overflow issue */
+    overflow-wrap: break-word;
 }
 
 .highlight strong {
@@ -365,11 +388,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-.info-section p, .info-section ul {
+.info-section p {
     color: var(--text-dark, #000) !important;
     line-height: 1.7;
     font-size: 1rem;
     margin-bottom: 10px;
+    word-wrap: break-word; /* Fix overflow issue */
+    overflow-wrap: break-word;
+    text-align: justify;
+}
+
+.info-section ul {
+    color: var(--text-dark, #000) !important;
+    line-height: 1.7;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    word-wrap: break-word; /* Fix overflow issue */
+    overflow-wrap: break-word;
 }
 
 .info-section ul {
@@ -382,6 +417,8 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 8px;
     line-height: 1.6;
     padding-left: 20px;
+    word-wrap: break-word; /* Fix overflow issue */
+    overflow-wrap: break-word;
 }
 .info-section li::before {
     content: '»';
@@ -447,6 +484,8 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 500;
     color: var(--white) !important;
     font-size: 1.1rem !important;
+    word-wrap: break-word; /* Fix overflow issue */
+    overflow-wrap: break-word;
 }
 .result-box h3 {
     color: var(--white) !important;
@@ -487,12 +526,5 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--primary-color, #000);
     font-weight: bold;
     font-size: 1.2rem;
-}
-
-/* Remove old list styling to avoid conflicts */
-.project-info ul li::before {
-    content: none;
-}
-.project-info > ul {
-    display: none;
+} font-size: 1.2rem;
 }
