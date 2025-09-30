@@ -27,6 +27,12 @@
     --secondary-color: var(--secondary); /* Consolidado para usar --secondary */
     --text-color: var(--gray); /* Consolidado para usar --gray */
     --dark-text: var(--dark); /* Consolidado para usar --dark */
+
+    /* Shadows */
+    --shadow-medium: rgba(0, 0, 0, 0.3);
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-cta: rgba(0, 63, 125, 0.3);
+    --shadow-cta-hover: rgba(0, 63, 125, 0.5);
 }
 
 /* Base Styles */
@@ -84,7 +90,7 @@ h1, h2, h3, h4, h5, h6 {
 .btn-primary {
     background: var(--gradient-secondary);
     color: var(--white);
-    border: 50px;
+    border: none;
     font-size: 18px;
 }
 
@@ -1084,20 +1090,21 @@ footer::before {
     display: flex;
     gap: 15px;
     margin-top: 20px;
+    text-decoration: none;
 }
 
 .social-link {
     width: 40px;
     height: 40px;
     background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
+    border-radius: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--white);
     font-size: 18px;
     transition: all 0.3s ease;
-    text-decoration: none !important;
+    text-decoration: none;
 }
 
 .social-link:hover {
