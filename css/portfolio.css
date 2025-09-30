@@ -460,7 +460,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .spec-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 15px;
 }
 
@@ -511,7 +511,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .activities-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 12px;
     margin: 20px 0;
 }
@@ -538,5 +538,22 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--primary-color, #000);
     font-weight: bold;
     font-size: 1.2rem;
-} font-size: 1.2rem;
+}
+
+@media (max-width: 480px) {
+    .spec-grid,
+    .activities-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .technical-specs,
+    .result-box {
+        padding: 15px;
+    }
+
+    .portfolio-item,
+    .project-body {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 }
